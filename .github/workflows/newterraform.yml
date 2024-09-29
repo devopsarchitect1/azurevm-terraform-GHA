@@ -8,11 +8,9 @@ on:
     branches:
       - main
 
-defaults:
-  run:
-    shell: bash
+
 env: 
-  ROOT_PATH: '${{github.workspace}}/actions/terraform-azure'
+  ROOT_PATH: '${{github.workspace}}/scr'
 
 
 jobs:
