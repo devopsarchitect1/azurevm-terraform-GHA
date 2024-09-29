@@ -8,17 +8,10 @@ on:
     branches:
       - main
 
-defaults:
-  run:
-    shell: bash
-env: 
-  ROOT_PATH: '${{github.workspace}}/actions/terraform-azure'
-
-
 jobs:
   terraform:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -35,11 +28,9 @@ jobs:
         
       - name: Terraform init -upgrade
         run: terraform init
-        working-directory: ${{ env.ROOT_PATH }}
   
       - name: Terraform Plan
         run: terraform plan
-        working-directory: ${{ env.ROOT_PATH }}
 
       - name: Terraform Apply
         if: github.event_name == 'push'
