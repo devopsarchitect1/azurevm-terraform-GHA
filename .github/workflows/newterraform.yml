@@ -15,7 +15,7 @@ defaults:
     shell: bash
 
 env: 
-  ROOT_PATH: '${{ github.workspace }}/scr'
+  ROOT_PATH: '${{ github.workspace }}/src'
 
 
 jobs:
